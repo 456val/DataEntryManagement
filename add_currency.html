@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Currency</title>
+    <link rel="stylesheet" href="{% static 'library/css/style.css' %}">
+
+</head>
+<body>
+    <div class="content">
+        
+        <h1><b><p>Mint Form.</p></b></h1>
+        <div class="links">
+            <a href="{% url 'add_currency' %}">Currency Form</a>
+            <a href="{% url 'add_production' %}">Production Form</a>
+            <a href="{% url 'add_inventory' %}">Inventory Form</a>
+        </div>
+    </div>
+    <h1>Add Currency Item</h1>
+    <form method="post">
+        {% csrf_token %}  <!-- Prevents Cross-Site Request Forgery attacks -->
+        {{ form.as_p }}   <!-- Renders form fields as paragraphs -->
+        <button type="submit">Add Item</button>  <!-- Submit button -->
+    </form>
+</body>
+</html>

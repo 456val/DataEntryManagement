@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'library/css/style.css' %}">
+    
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to the Homepage!</h1>
+    </header>
+    <div class="content">
+        {% block content %}
+        <p>Mint Form.</p>
+        <div class="links">
+            <a href="{% url 'add_currency' %}">Currency Form</a>
+            <a href="{% url 'add_production' %}">Production Form</a>
+            <a href="{% url 'add_inventory' %}">Inventory Form</a>
+        
+        </div>
+        {% endblock %}
+    </div>
+</body>
+</html>
